@@ -10,19 +10,25 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,Button
 } from 'react-native';
 
 export default class screen3 extends Component<{}> {
+	
 	 static navigationOptions={
 	  tabBarLabel:'✉',
 	  title:'Mails',
+	 
 	 };
+	
   render() {
+	
     return (
       <View style={styles.container}>
+	      
+	  
         <Text style={styles.welcome}>
-          Screen3
+          Mails
    
         </Text>
       </View>
@@ -34,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
   },
  
   instructions: {

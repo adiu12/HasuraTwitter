@@ -1,4 +1,4 @@
- import {TabNavigator,StackNavigator,DrawerNavigator,DrawerItems} from 'react-navigation';
+ import {TabNavigator,StackNavigator,DrawerNavigator,DrawerItems,NavigationActions} from 'react-navigation';
 import search from './search';
 import React, { Component } from 'react';
 import {
@@ -9,21 +9,25 @@ import {
 } from 'react-native';
 
 export default class draw extends Component<{}> {
+	
+	
 	static navigationOptions=({navigation})=>({
           drawerLabel:'profile',
 		   tabBarLabel:'✉',
-		   title:'Mails',
+		   title:'profile',
+		   headerLeft:<Text>profile</Text>
 		
 	});
+	
   render() {
 	  
-	  const{navigate}=this.props.navigation;
-	  const { routes } = this.props.navigation.state;
+
 	  
     return (
       <View style={styles.container}>
-	            
-        
+
+    
+                 
 		<Image
             source={require('../images/beard.png')}
            

@@ -16,15 +16,15 @@ import {
 
 
 export default class search extends Component<{}> {
-	static navigationOptions={
-	  title:'search',
-	  headerStyle:{
+		static navigationOptions=({navigation})=>({
+	    title:'search',
+	    headerStyle:{
 		  
 		  backgroundColor:'lightgrey',
 	  }
-	};
+		});
   render() {
-	  
+	   const{navigate}=this.props.navigation;
     return (
       <View style={styles.container}>
 	       

@@ -15,31 +15,34 @@ import draw from './Tabs/draw';
 import alerts from './Tabs/alerts';
   
 
-   
+   /*
     const myDrawer=DrawerNavigator({
-Home:{screen:HomeScreen},
-       profile:{screen: draw},               
-					  },
+
+        Home:{screen:HomeScreen },               
+	    draw:{screen:draw},			  },
 	{
-		initialRouteName:'profile',
-		drawerWidth:200,
-	  drawerPosition:'left', 
-	   contentComponent: 'SideDrawer',
+		
+		drawerWidth:100,
+	  drawerPosition:'left',
+       drawerOpenRoute:'DrawerOpen',
+	   drawerCloseRoute:'DrawerClose',
+	   drawerToggleRoute:'DrawerToggle',
+	   
 	  },
 
 
 {
-	  contentComponent:props =>  <profile{...props}/> 
+	  contentComponent:draw 
 	   
    }); 
-   
+*/   
    const mytabs=TabNavigator({
 Home:{ screen:HomeScreen },
 
  
 Searchpage:{ screen:screen2},
 Alert:{screen:alerts},
-Mail:{ screen:draw},
+Mails:{ screen:screen3},
 
 },{
 tabBarOptions:{
@@ -70,18 +73,47 @@ labelStyle:{
    
    
  const mystack=StackNavigator ({
-	Home:{screen:mytabs},
+	Home:{screen:mytabs,   navigationOptions:({navigation})=>({
+	  headerLeft:<Text style={{fontSize:23}} onPress={()=> navigation.navigate('DrawerToggle')}>☷
+</Text>,
+	  })},
 	
 	
 	search :{screen:search},
-	profile:{screen: myDrawer}, 
+	Home:{screen:  DrawerNavigator({
+
+                      
+	    Home:{screen:mytabs,navigationOptions:({navigation})=>({
+	  headerLeft:<Text style={{fontSize:23}} onPress={()=> navigation.navigate('DrawerToggle')}>☷
+</Text>,
+	  })},			  },
+	{
+		
+		drawerWidth:300,
+	  drawerPosition:'left',
+       drawerOpenRoute:'DrawerOpen',
+	   drawerCloseRoute:'DrawerClose',
+	   drawerToggleRoute:'DrawerToggle',
+	  contentComponent:draw 
+	  },
+
+
+
+	  
+	   
+   ), 
+ }, 
  },{
 	
 	 labelStyle:{
 		backgroundColor:'lightgrey', 
          fontSize:'40',		
-	  }
+	  },
+	
  });
+ 
+ 
+ 
    
    
 
